@@ -58,13 +58,13 @@
 
         <p class="lead">{{header.univ}}</p>
         <div class="social">
-          <a v-bind:href="header.social.ig.url"
+          <a v-bind:href="header.social == undefined ? '':header.social.ig.url"
             ><i class="fa-brands fa-instagram"></i
           ></a>
-          <a v-bind:href="header.social.gh.url"
+          <a v-bind:href="header.social == undefined ? '':header.social.gh.url"
             ><i class="fa-brands fa-github"></i
           ></a>
-          <a v-bind:href="header.social.yt.url"
+          <a v-bind:href="header.social == undefined ? '':header.social.yt.url"
             ><i class="fa-brands fa-youtube"></i
           ></a>
         </div>
@@ -95,7 +95,7 @@
         </div>
       </div>
       <div class="card-deck mb-3">
-        <div class="card" v-for="item in porfolio">
+        <div class="card" v-for="item in articles">
           <img v-bind:src="item.thumbnail" class="card-img-top" />
           <div class="card-body">
             <h5 class="card-title">{{item.title}}</h5>
