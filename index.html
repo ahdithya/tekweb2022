@@ -15,15 +15,19 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <title>Aditya Atallah</title>
   </head>
-  <body>
+  <body id="app">
     <!-- Navbar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Aditya</a>
+        <a class="navbar-brand" href="#">{{navbar.name}}</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -37,8 +41,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#about">About</a>
-            <a class="nav-item nav-link" href="#portfolio">Portfolio</a>
+            <a class="nav-item nav-link" href="#about">{{navbar.about}}</a>
+            <a class="nav-item nav-link" href="#portfolio"
+              >{{navbar.portfolio}}</a
+            >
           </div>
         </div>
       </div>
@@ -47,14 +53,21 @@
     <!-- Main -->
     <div class="jumbotron jumbotron-fluid">
       <div class="container text-center">
-        <img
-          src="assets/img/IMG01.jpg "
-          class="rounded-circle"
-          width="300px"
-          alt=""
-        />
-        <h1 class="display-4">Aditya Atallah</h1>
-        <p class="lead">Student at Ahmad Dahlan University</p>
+        <img src="assets/img/IMG01.jpg " class="rounded-circle" />
+        <h1 class="display-4">{{header.title}}</h1>
+
+        <p class="lead">{{header.univ}}</p>
+        <div class="social">
+          <a v-bind:href="header.social.ig.url"
+            ><i class="fa-brands fa-instagram"></i>{{header.social.ig.title}}</a
+          >
+          <a v-bind:href="header.social.gh.url"
+            ><i class="fa-brands fa-github"></i>{{header.social.gh.title}}</a
+          >
+          <a v-bind:href="header.social.yt.url"
+            ><i class="fa-brands fa-youtube"></i>{{header.social.yt.title}}</a
+          >
+        </div>
       </div>
     </div>
 
@@ -62,39 +75,31 @@
     <div class="container">
       <div class="row">
         <div class="col-md text-center mb-5">
-          <h1 id="about">About</h1>
+          <h1 id="about">{{navbar.about}}</h1>
+          <p class="col-sm">{{about.description}}</p>
         </div>
       </div>
-      <div class="row text-justify">
-        <div class="col-md">
-          <p class="mb-3">
-            Mahasiswa Sistem Informasi di Universitas Ahmad Dahlan, yang
-            memiliki ketertarikan pada bidang teknologi dan digital. 
-          </p>
-        </div>
-      </div>
+
+      <div class="align-items-center"></div>
     </div>
 
-    <!-- Portfolio -->
+    <!-- Skills -->
     <div class="container">
-      <div class="row mb-5">
+      <div class="row"></div>
+    </div>
+    <!-- Portfolio -->
+    <div class="container pt-3">
+      <div class="row mb-3">
         <div class="col text-center">
-          <h1 id="portfolio">Portfolio</h1>
+          <h1 id="portfolio">{{navbar.portfolio}}</h1>
         </div>
       </div>
       <div class="card-deck mb-3">
-        <div class="card">
-          <img src="assets/img/1.jpg" class="card-img-top" alt="..." />
+        <div class="card" v-for="item in porfolio">
+          <img v-bind:src="item.thumbnail" class="card-img-top" />
           <div class="card-body">
-            <h5 class="card-title">Project 1</h5>
-            <p class="card-text">Membuat Project 1</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="assets/img/2.jpg" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Project 2</h5>
-            <p class="card-text">Membuat Project 2</p>
+            <h5 class="card-title">{{item.title}}</h5>
+            <p class="card-text">{{item.description}}</p>
           </div>
         </div>
       </div>
@@ -117,6 +122,8 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
