@@ -1,18 +1,18 @@
 {
-    "title": "Aditya Atallah",
-    "univ": "Student at Ahmad Dahlan University",
-    "social": {
-      "ig": {
-        "url": "https://www.instagram.com/ahdithya/",
-        "title": "Aditya A"
-      },
-      "gh": {
-        "url": "https://github.com/ahdithya",
-        "title": "Aditya A"
-      },
-      "yt": {
-        "url": "https://www.youtube.com/channel/UCERdynRBJiXTc_z0AvYp8OQ",
-        "title": "Aditya A"
-      }
+  "title": "Aditya Atallah",
+  "univ": "Student at Ahmad Dahlan University",
+  "social": {
+    "ig": {
+      "url": "https://www.instagram.com/ahdithya/",
+      "title": "Aditya A"
+    },
+    "gh": {
+      "url": "https://github.com/ahdithya",
+      "title": "Aditya A"
+    },
+    "yt": {
+      "url": "https://www.youtube.com/channel/UCERdynRBJiXTc_z0AvYp8OQ",
+      "title": "Aditya A"
     }
   }
+}

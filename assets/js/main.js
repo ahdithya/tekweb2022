@@ -1,33 +1,9 @@
 Vue.createApp({
   data() {
     return {
-      navbar: {
-        name: "Aditya",
-        about: "About",
-        portfolio: "Portfolio",
-      },
-      header: {
-        title: "Aditya Atallah",
-        univ: "Student at Ahmad Dahlan University",
-        social: {
-          ig: {
-            url: "https://www.instagram.com/ahdithya/",
-            title: "Aditya A",
-          },
-          gh: {
-            url: "https://github.com/ahdithya",
-            title: "Aditya A",
-          },
-          yt: {
-            url: "https://www.youtube.com/channel/UCERdynRBJiXTc_z0AvYp8OQ",
-            title: "Aditya A",
-          },
-        },
-      },
-      about: {
-        description:
-          "Mahasiswa Sistem Informasi di Universitas Ahmad Dahlan, yang memiliki ketertarikan pada bidang teknologi dan digital.",
-      },
+      navbar: {},
+      header: {},
+      about: {},
       porfolio: [
         {
           title: "Project 1",
@@ -45,5 +21,23 @@ Vue.createApp({
         },
       ],
     };
+  },
+  methods: {
+    getHeaderData() {
+      axios
+        .get(
+          "https://raw.githubusercontent.com/ahdithya/tekweb2022/main/data/header.json"
+        )
+        .then((res) => {
+          console.log(res.data); //melihat respon data pada console browser
+          this.header = res.data; //memperbarui variabel header pada bagian data()
+        })
+        .catch((error) => {
+          console.log(error); //melihat error jika pengambilan data adalah gagal
+        });
+    },
+  },
+  beforeMount() {
+    this.getHeaderData(); //eksekusi fungsi getHeaderData() pada bagian methods saat halaman terbuka
   },
 }).mount("#app");
