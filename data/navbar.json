@@ -1,13 +1,6 @@
-<<<<<<< HEAD
 {
   "name": "Aditya",
   "about": "About",
-  "portfolio": "Portfolio"
+  "skill": "Skill",
+  "articles": "Articles"
 }
-=======
-{
-  "name": "Aditya",
-  "about": "About",
-  "portfolio": "Portfolio"
-}
->>>>>>> 826719a28f6d79bd870c5277fedd6a1056ba605e

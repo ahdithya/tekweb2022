@@ -4,22 +4,7 @@ Vue.createApp({
       navbar: {},
       header: {},
       about: {},
-      porfolio: [
-        {
-          title: "Project 1",
-          description:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni fugit ut animi numquam",
-          thumbnail:
-            "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-        },
-        {
-          title: "Project 1",
-          description:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni fugit ut animi numquam",
-          thumbnail:
-            "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-        },
-      ],
+      articles: [],
     };
   },
 
@@ -63,11 +48,24 @@ Vue.createApp({
           console.log(error);
         });
     },
-    getArticles() {},
+    getArticles() {
+      axios
+        .get(
+          "https://raw.githubusercontent.com/ahdithya/tekweb2022/main/data/articles.json"
+        )
+        .then((res) => {
+          console.log(res.data);
+          this.articles = res.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
   beforeMount() {
     this.getHeaderData();
     this.getNavbarData();
     this.getAboutData();
+    this.getArticles();
   },
 }).mount("#app");

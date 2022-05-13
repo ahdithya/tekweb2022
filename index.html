@@ -87,11 +87,12 @@
     <div class="container">
       <div class="row"></div>
     </div>
+
     <!-- Portfolio -->
     <div class="container pt-3">
       <div class="row mb-3">
         <div class="col text-center">
-          <h1 id="portfolio">{{navbar.portfolio}}</h1>
+          <h1 id="portfolio">{{navbar.articles}}</h1>
         </div>
       </div>
       <div class="card-deck mb-3">
@@ -100,6 +101,7 @@
           <div class="card-body">
             <h5 class="card-title">{{item.title}}</h5>
             <p class="card-text">{{item.description}}</p>
+            <a href="" class="btn btn-dark">Baca Lebih Lanjut </a>
           </div>
         </div>
       </div>
@@ -124,6 +126,8 @@
     ></script>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
+
     <script src="assets/js/main.js"></script>
   </body>
 </html>
