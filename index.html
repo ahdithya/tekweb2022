@@ -43,7 +43,7 @@
           <div class="navbar-nav">
             <a class="nav-item nav-link" href="#about">{{navbar.about}}</a>
             <a class="nav-item nav-link" href="#portfolio"
-              >{{navbar.portfolio}}</a
+              >{{navbar.articles}}</a
             >
           </div>
         </div>
@@ -73,9 +73,9 @@
 
     <!-- About -->
     <div class="container">
-      <div class="row">
+      <div class="row" id="about">
         <div class="col-md text-center mb-5">
-          <h1 id="about">{{navbar.about}}</h1>
+          <h1>{{navbar.about}}</h1>
           <p class="col-sm">{{about.description}}</p>
         </div>
       </div>
@@ -100,12 +100,12 @@
           <img v-bind:src="item.thumbnail" class="card-img-top" />
           <div class="card-body">
             <h5 class="card-title">{{item.title}}</h5>
-            <p class="card-text">{{item.description}} <br /></p>
+            <p class="card-text">{{item.description}}</p>
             <p class="size">
               {{item.author}} <br />
               <small>{{item.published_at}}</small>
             </p>
-            <a v-bind:href="display-md.html" class="btn btn-dark"
+            <a href="display-md.html" class="btn btn-dark"
               >Baca Lebih Lanjut
             </a>
           </div>

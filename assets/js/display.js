@@ -9,7 +9,7 @@ Vue.createApp({
       var converter = new showdown.Converter(); //mendefinisikan konverter
       axios
         .get(
-          "https://raw.githubusercontent.com/faridsurya/Vue-Axios-Basic/master/contents/article_1.md"
+          "https://raw.githubusercontent.com/ahdithya/tekweb2022/main/data/articles-brownies.md"
         )
         .then((res) => {
           var html = converter.makeHtml(res.data); //eksekusi konverter
