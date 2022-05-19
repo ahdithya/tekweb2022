@@ -42,6 +42,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-item nav-link" href="#about">{{navbar.about}}</a>
+            <a class="nav-item nav-link" href="#skill">{{navbar.skill}}</a>
             <a class="nav-item nav-link" href="#portfolio"
               >{{navbar.articles}}</a
             >
@@ -84,15 +85,18 @@
     </div>
 
     <!-- Skills -->
-    <div class="container">
-      <div class="row"></div>
+    <div class="container" id="skill">
+      <div class="row">
+        <div class="col text-center">
+          <h1>{{navbar.skill}}</h1>
+        </div>
     </div>
 
     <!-- Portfolio -->
-    <div class="container pt-3">
+    <div class="container pt-3" id="portfolio">
       <div class="row mb-3">
         <div class="col text-center">
-          <h1 id="portfolio">{{navbar.articles}}</h1>
+          <h1>{{navbar.articles}}</h1>
         </div>
       </div>
       <div class="card-deck mb-3">
