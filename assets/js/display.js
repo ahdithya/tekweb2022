@@ -8,7 +8,7 @@ Vue.createApp({
     getMarkdownData() {
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
-      const article = urlParams.get("articles");
+      const article = urlParams.get("article");
       var converter = new showdown.Converter(); //mendefinisikan konverter
       axios
         .get(
