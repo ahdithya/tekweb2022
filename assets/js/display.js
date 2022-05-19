@@ -6,10 +6,14 @@ Vue.createApp({
   },
   methods: {
     getMarkdownData() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const article = urlParams.get("article");
       var converter = new showdown.Converter(); //mendefinisikan konverter
       axios
         .get(
-          "https://raw.githubusercontent.com/ahdithya/tekweb2022/main/data/articles-brownies.md"
+          "https://raw.githubusercontent.com/ahdithya/tekweb2022/main/data" +
+            article
         )
         .then((res) => {
           var html = converter.makeHtml(res.data); //eksekusi konverter
