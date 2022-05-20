@@ -14,3 +14,7 @@ i {
 .size {
   font-size: 14px;
 }
+
+.navbar-nav {
+  margin-left: auto;
+}
