@@ -55,17 +55,17 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container text-center">
         <img src="assets/img/IMG01.jpg " class="rounded-circle" />
-        <h1 class="display-4">{{header.title}}</h1>
+        <h1 class="display-4">{{header.name}}</h1>
 
-        <p class="lead">{{header.univ}}</p>
+        <p class="lead">{{header.kampus}}</p>
         <div class="social">
-          <a v-bind:href="header.social == undefined ? '':header.social.ig.url"
+          <a v-bind:href="header.ig.url"
             ><i class="fa-brands fa-instagram"></i
           ></a>
-          <a v-bind:href="header.social == undefined ? '':header.social.gh.url"
+          <a v-bind:href="header.gh.url"
             ><i class="fa-brands fa-github"></i
           ></a>
-          <a v-bind:href="header.social == undefined ? '':header.social.yt.url"
+          <a v-bind:href="header.yt.url"
             ><i class="fa-brands fa-youtube"></i
           ></a>
         </div>
