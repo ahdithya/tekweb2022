@@ -1,3 +1,5 @@
+let api = "https://api.adithya.my.id/index.php/";
+
 Vue.createApp({
   data() {
     return {
@@ -11,9 +13,7 @@ Vue.createApp({
   methods: {
     getHeaderData() {
       axios
-        .get(
-          "https://raw.githubusercontent.com/ahdithya/tekweb2022/main/data/header.json"
-        )
+        .get(api + "users/1")
         .then((res) => {
           console.log(res.data);
           this.header = res.data;
