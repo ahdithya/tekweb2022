@@ -50,12 +50,27 @@ Vue.createApp({
     },
     getArticles() {
       axios
-        .get(
-          "https://raw.githubusercontent.com/ahdithya/tekweb2022/main/data/articles.json"
-        )
+        .get(api + "articles")
         .then((res) => {
           console.log(res.data);
           this.articles = res.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    getMarkdown() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const articles = urlParams.get("article");
+      var converter = new showdown.Converter();
+      console.log(articles);
+      axios
+        .get((src = "./data/" + articles))
+        .then((res) => {
+          var html = converter.makeHtml(res.data);
+          this.article = html;
+          console.log(html);
         })
         .catch((error) => {
           console.log(error);
@@ -67,5 +82,6 @@ Vue.createApp({
     this.getNavbarData();
     this.getAboutData();
     this.getArticles();
+    this.getMarkdown();
   },
 }).mount("#app");
